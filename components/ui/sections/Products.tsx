@@ -38,7 +38,7 @@ const Products = () => {
     };
 
 
-    const features = [
+    const products = [
         {
             image: "/images/marble.webp",
             title: "High-Quality Materials",
@@ -85,7 +85,7 @@ const Products = () => {
                 viewport={{ once: true, margin: "-100px" }}
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             >
-                {features.map((feature, index) => (
+                {products.map((product, index) => (
                     <motion.div
                         key={index}
                         variants={item}
@@ -109,8 +109,8 @@ const Products = () => {
                                     className="relative h-full w-full"
                                 >
                                     <Image
-                                        src={feature.image}
-                                        alt={feature.title}
+                                        src={product.image}
+                                        alt={product.title}
                                         fill
                                         className="object-cover"
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
@@ -123,12 +123,12 @@ const Products = () => {
                             <div className="p-6 flex flex-col flex-1">
                                 <div className="flex items-center gap-3  cursor-pointer mb-3">
                                     <h3 className="text-xl font-bold text-gray-900 hover:text-pink-800 transition-colors duration-300">
-                                        {feature.title}
+                                        {product.title}
                                     </h3>
                                 </div>
 
                                 <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300 flex-1">
-                                    {feature.description}
+                                    {product.description}
                                 </p>
 
                                 <div className="mt-6 pt-4 border-t border-gray-100 group-hover:border-gray-200 transition-colors duration-300 cursor-pointer">

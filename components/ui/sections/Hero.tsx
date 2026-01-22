@@ -51,7 +51,7 @@ export default function Hero() {
                 >
                     <motion.div variants={item} className="flex flex-col gap-3">
                         <SplitText
-                            text="Premium Quality • Natural Elegance"
+                            text="Dorra Ekka Marble & Granite"
                             className="text-base text-pink-500 font-semibold"
                             delay={50}
                             duration={1.25}
@@ -64,8 +64,8 @@ export default function Hero() {
                         />
 
                         <SplitText
-                            text="Dorra Ekka Marble & Granite"
-                            className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+                            text="A PERFECT BLEND OF STRENGTH & BEAUTY"
+                            className="font-playfair text-4xl lg:text-5xl font-bold italic leading-tight tracking-tight"
                             delay={50}
                             duration={1.25}
                             splitType="chars"
@@ -86,7 +86,7 @@ export default function Hero() {
                     <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 pt-8">
                         <Button href="/products" size="md" className="rounded-md" label="Explore Products" />
 
-                        <Button href="/contact" size="md" variant="outline" className="rounded-md text-white" label="Get a Quote" />
+                        <Button href="/contact" size="md" variant="outline" className="rounded-md text-white hover:text-gray-950" label="Get a Quote" />
 
                     </motion.div>
                 </motion.div>
