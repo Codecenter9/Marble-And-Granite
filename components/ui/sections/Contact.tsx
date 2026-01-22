@@ -4,7 +4,7 @@ import { Phone, Send } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <section className="relative z-10 bg-gray-50 py-24 px-6 md:px-12 lg:px-24 overflow-hidden">
+    <section id='contact' className="relative z-10 bg-gray-50 py-24 px-6 md:px-12 lg:px-24 overflow-hidden">
 
       <div className="relative max-w-7xl mx-auto">
         <SectionTitle
