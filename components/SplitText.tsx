@@ -20,7 +20,7 @@ type SplitTextProps = {
   threshold?: number; // for ScrollTrigger start
   rootMargin?: string;
   textAlign?: "left" | "center" | "right" | "justify";
-  tag?: keyof JSX.IntrinsicElements;
+  tag?: string;
   onLetterAnimationComplete?: () => void;
 };
 
