@@ -2,8 +2,8 @@
 
 import { motion, Variants } from "framer-motion";
 import { useRef } from "react";
-import SplitText from "../../SplitText";
 import Button from "@/components/common/Button";
+import { TextAnimate } from "../text-animate";
 
 export default function Hero() {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -50,37 +50,25 @@ export default function Hero() {
                     className="max-w-xl space-y-5 text-white"
                 >
                     <motion.div variants={item} className="flex flex-col gap-3">
-                        <SplitText
-                            text="Dorra Ekka Marble & Granite"
-                            className="text-base text-pink-500 font-semibold"
-                            delay={50}
-                            duration={1.25}
-                            splitType="chars"
-                            from={{ opacity: 0, y: 40 }}
-                            to={{ opacity: 1, y: 0 }}
-                            threshold={0.1}
-                            rootMargin="-100px"
-                            textAlign="left"
-                        />
+                        <TextAnimate animation="blurInUp" by="character" once className="text-base text-pink-500 font-semibold"
+                        >
+                            Dorra Ekka Marble & Granite
+                        </TextAnimate>
 
-                        <SplitText
-                            text="A PERFECT BLEND OF STRENGTH & BEAUTY"
-                            className="font-playfair text-4xl lg:text-5xl font-bold italic leading-tight tracking-tight"
-                            delay={50}
-                            duration={1.25}
-                            splitType="chars"
-                            from={{ opacity: 0, y: 40 }}
-                            to={{ opacity: 1, y: 0 }}
-                            threshold={0.1}
-                            rootMargin="-100px"
-                            textAlign="left"
-                        />
+                        <TextAnimate animation="blurInUp" by="character" once className="font-playfair text-4xl lg:text-5xl font-bold italic leading-tight tracking-tight"
+                        >
+                            A PERFECT BLEND OF STRENGTH & BEAUTY
+                        </TextAnimate>
 
                     </motion.div>
 
                     <motion.p variants={item} className="font-body text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed">
-                        Timeless elegance crafted from the finest marble and granite,
-                        designed to elevate modern and classic spaces with natural beauty.
+                        <TextAnimate animation="blurInUp" by="character" once
+                        >
+                            Timeless elegance crafted from the finest marble and granite,
+                            designed to elevate modern and classic spaces with natural beauty.
+                        </TextAnimate>
+
                     </motion.p>
 
                     <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 pt-8">

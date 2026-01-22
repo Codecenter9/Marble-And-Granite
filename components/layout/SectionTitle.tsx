@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import SplitText from "../SplitText";
+import { TextAnimate } from "../ui/text-animate";
 
 interface SectionTitleProps {
     title: string;
@@ -39,59 +39,38 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
         <div className={`flex flex-col ${alignmentClasses[align]} ${className}`}>
             {subtitle && (
                 <div className={`flex items-center gap-2 w-full`}>
+
                     <div className={`w-3 h-0.5 ${subtitleLineColor}`} />
 
                     <div className="relative shrink-0">
-                        <SplitText
-                            text={subtitle}
-                            className={`text-sm md:text-base font-semibold tracking-widest uppercase text-gray-500 ${subtitleClass}`}
-                            delay={50}
-                            duration={1.25}
-                            splitType="chars"
-                            from={{ opacity: 0, y: 20 }}
-                            to={{ opacity: 1, y: 0 }}
-                            threshold={0.1}
-                            rootMargin="-100px"
-                            textAlign={align}
-                        />
+                        <TextAnimate animation="blurInUp" by="character" once className={`text-sm md:text-base font-semibold tracking-widest uppercase text-gray-500 ${subtitleClass}`}
+                        >
+                            {subtitle}
+                        </TextAnimate>
+
                         <div className={`absolute -bottom-1 left-0 h-0.5 ${accentColor} w-0 group-hover:w-full transition-all duration-700`} />
                     </div>
-
                     <div className={`w-3 h-0.5 ${subtitleLineColor}`} />
+
                 </div>
             )}
 
             <div className="relative ">
-                <SplitText
-                    text={title}
-                    className={`text-2xl md:text-3xl font-bold tracking-tight leading-tight ${titleClass}`}
-                    delay={50}
-                    duration={1.25}
-                    splitType="chars"
-                    from={{ opacity: 0, y: 40 }}
-                    to={{ opacity: 1, y: 0 }}
-                    threshold={0.1}
-                    rootMargin="-100px"
-                    textAlign={align}
-                />
+                <TextAnimate animation="blurInUp" by="character" once className={`text-2xl md:text-3xl font-bold tracking-tight leading-tight ${titleClass}`}
+                >
+                    {title}
+                </TextAnimate>
 
                 <div className={`absolute -z-10 -inset-4 ${accentColor} opacity-5 blur-3xl`} />
             </div>
 
             {description && (
                 <div className={`max-w-2xl ${align === "center" ? "mx-auto" : ""}`}>
-                    <SplitText
-                        text={description}
-                        className={`text-base md:text-lg text-gray-600 leading-relaxed ${descriptionClass}`}
-                        delay={100}
-                        duration={1.5}
-                        splitType="words"
-                        from={{ opacity: 0, y: 20 }}
-                        to={{ opacity: 1, y: 0 }}
-                        threshold={0.1}
-                        rootMargin="-100px"
-                        textAlign={align}
-                    />
+                    <TextAnimate animation="blurInUp" by="character" once className={`text-base md:text-lg text-gray-600 leading-relaxed ${descriptionClass}`}
+
+                    >
+                        {description}
+                    </TextAnimate>
                 </div>
             )}
         </div>

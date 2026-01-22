@@ -7,7 +7,7 @@ import React from "react";
 
 const CTA = () => {
     return (
-        <section className="py-16 px-6 md:px-12 lg:px-24">
+        <section className="py-12 px-6 md:px-12 lg:px-24">
             <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -19,7 +19,6 @@ const CTA = () => {
                      bg-gray-900
                     px-6 md:px-12 lg:px-24 py-16
                     text-white
-                    rounded-md
                 "
             >
                 <span className="absolute -top-20 -left-20 w-64 h-64 bg-white/20 rounded-full blur-3xl" />
