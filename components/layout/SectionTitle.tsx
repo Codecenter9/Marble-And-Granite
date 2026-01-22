@@ -47,14 +47,12 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
                             className={`text-sm md:text-base font-semibold tracking-widest uppercase text-gray-500 ${subtitleClass}`}
                             delay={50}
                             duration={1.25}
-                            // ease="power3.out"
                             splitType="chars"
                             from={{ opacity: 0, y: 20 }}
                             to={{ opacity: 1, y: 0 }}
                             threshold={0.1}
                             rootMargin="-100px"
                             textAlign={align}
-                            onLetterAnimationComplete={() => { }}
                         />
                         <div className={`absolute -bottom-1 left-0 h-0.5 ${accentColor} w-0 group-hover:w-full transition-all duration-700`} />
                     </div>
@@ -69,7 +67,6 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
                     className={`text-2xl md:text-3xl font-bold tracking-tight leading-tight ${titleClass}`}
                     delay={50}
                     duration={1.25}
-                    // ease="power3.out"
                     splitType="chars"
                     from={{ opacity: 0, y: 40 }}
                     to={{ opacity: 1, y: 0 }}
@@ -88,14 +85,12 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
                         className={`text-base md:text-lg text-gray-600 leading-relaxed ${descriptionClass}`}
                         delay={100}
                         duration={1.5}
-                        // ease="power3.out"
                         splitType="words"
                         from={{ opacity: 0, y: 20 }}
                         to={{ opacity: 1, y: 0 }}
                         threshold={0.1}
                         rootMargin="-100px"
                         textAlign={align}
-                        // onLetterAnimationComplete={() => { }}
                     />
                 </div>
             )}
