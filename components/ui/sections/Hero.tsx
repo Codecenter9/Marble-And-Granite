@@ -57,7 +57,7 @@ export default function Hero() {
                             className="text-base text-pink-500 font-semibold"
                             delay={50}
                             duration={1.25}
-                            ease="power3.out"
+                            // ease="power3.out"
                             splitType="chars"
                             from={{ opacity: 0, y: 40 }}
                             to={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ export default function Hero() {
                             className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
                             delay={50}
                             duration={1.25}
-                            ease="power3.out"
+                            // ease="power3.out"
                             splitType="chars"
                             from={{ opacity: 0, y: 40 }}
                             to={{ opacity: 1, y: 0 }}

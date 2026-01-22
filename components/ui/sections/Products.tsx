@@ -68,13 +68,14 @@ const Products = () => {
 
     return (
         <section className="relative z-10 bg-gray-50 py-16 px-6 md:px-12 lg:px-24 overflow-hidden">
-            <div className="relative">
+            <div className="relative mb-5">
                 <SectionTitle
                     subtitle="Our Products"
                     title="Premium Quality & Excellence"
-                    description=''
+                    description="Crafted from the finest natural stone, our products combine timeless beauty, exceptional durability, and expert craftsmanship to elevate every space."
                     align="left"
                 />
+
             </div>
 
             <motion.div
