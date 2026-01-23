@@ -1,8 +1,29 @@
 "use client"
+
+import { motion, Variants } from "framer-motion";
 import LandingPage from '@/components/common/LandingPage'
 import { Accordion, AccordionItem } from "@heroui/accordion"
 
 const FAQ = () => {
+
+  const container: Variants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.14,
+        delayChildren: 0.25,
+      },
+    },
+  };
+
+  const item: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+    },
+  };
 
   const faqs = [
     {
@@ -66,27 +87,36 @@ const FAQ = () => {
         description='Find answers to common questions about our marble and granite services'
       />
       <div className="max-w-4xl mx-auto px-6 md:px-8 py-16">
-        <div className="space-y-4">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }} className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-gray-300 rounded-md">
+            <motion.div variants={item} key={index} className="bg-gray-300 rounded-md">
               <Accordion variant="splitted">
                 <AccordionItem className='text-start' key="1" aria-label={faq.question} title={faq.question}>
                   {faq.answer}
                 </AccordionItem>
 
               </Accordion>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mt-16 text-center">
+          <motion.h3 variants={item} className="text-2xl font-bold text-gray-900 mb-4">
             Still have questions?
-          </h3>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+          </motion.h3>
+          <motion.p variants={item} className="text-gray-600 mb-8 max-w-2xl mx-auto">
             Can not find the answer you are looking for? Our team is ready to help you with any specific questions about marble, granite, or your project.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          </motion.p>
+          <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
               className="inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors duration-300"
@@ -99,11 +129,10 @@ const FAQ = () => {
             >
               Call Now
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
-      {/* Background decorative elements */}
       <div className="absolute top-1/4 left-0 w-64 h-64 bg-linear-to-br from-gray-100 to-transparent rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-linear-to-tr from-gray-100 to-transparent rounded-full blur-3xl -z-10"></div>
     </section>

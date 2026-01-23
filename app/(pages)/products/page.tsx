@@ -85,12 +85,12 @@ const Products = () => {
           transition={{ duration: 0.5 }}
           className="mt-4 text-start max-w-3xl"
         >
-          <p className="text-gray-600 text-lg">
+          <motion.p variants={item} className="text-gray-600 text-lg">
             {activeTab === 'marble' && "Timeless elegance with natural veining patterns, perfect for creating luxurious and sophisticated spaces."}
             {activeTab === 'granite' && "Extreme durability and strength, ideal for high-traffic areas and surfaces requiring maximum resistance."}
             {activeTab === 'onyx' && "Translucent beauty that glows when backlit, creating dramatic and artistic lighting effects."}
             {activeTab === 'quartzite' && "Marble's beauty meets granite's strength - the perfect combination of aesthetics and durability."}
-          </p>
+          </motion.p>
         </motion.div>
       </div>
 

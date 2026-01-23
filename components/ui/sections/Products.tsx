@@ -41,30 +41,31 @@ const Products = () => {
     const products = [
         {
             image: "/images/marble.webp",
-            title: "High-Quality Materials",
-            description: "We source only the finest marble and granite to ensure durability and aesthetic appeal.",
+            title: "Granite Slabs",
+            description: "Premium natural granite slabs available in multiple colors and finishes for flooring, countertops, and wall applications.",
         },
         {
             image: "/images/marble.webp",
-            title: "Expert Craftsmanship",
-            description: "Our skilled artisans bring years of experience to every project, ensuring precision and excellence.",
+            title: "Marble Slabs",
+            description: "High-quality marble slabs offering timeless elegance, ideal for luxury interiors, staircases, and decorative surfaces.",
         },
         {
             image: "/images/marble.webp",
-            title: "Custom Designs",
-            description: "We offer tailored solutions to meet your unique design preferences and project requirements.",
+            title: "Cut-to-Size Stone",
+            description: "Custom-cut granite and marble tailored to exact project specifications for residential and commercial use.",
         },
         {
             image: "/images/marble.webp",
-            title: "Sustainable Practices",
-            description: "We are committed to environmentally friendly practices in sourcing and production.",
+            title: "Tiles & Panels",
+            description: "Precision-finished stone tiles and panels designed for floors, walls, and exterior cladding projects.",
         },
         {
             image: "/images/marble.webp",
-            title: "Sustainable Practices",
-            description: "We are committed to environmentally friendly practices in sourcing and production.",
+            title: "Custom Stone Solutions",
+            description: "Bespoke stone products including countertops, vanities, and feature pieces crafted to meet unique design needs.",
         },
     ];
+
 
     return (
         <section className="relative z-10 bg-gray-50 py-16 px-6 md:px-12 lg:px-24 overflow-hidden">

@@ -1,3 +1,4 @@
+import { motion, Variants } from "framer-motion";
 import React from "react";
 
 type SectionLandingPageProps = {
@@ -11,6 +12,25 @@ const LandingPage: React.FC<SectionLandingPageProps> = ({
     description,
     image = "/images/landingImage.webp",
 }) => {
+    const container: Variants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.14,
+                delayChildren: 0.25,
+            },
+        },
+    };
+
+    const item: Variants = {
+        hidden: { opacity: 0, y: 40 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+        },
+    };
+
     return (
         <section
             className="relative px-6 md:px-12 lg:px-24 h-[60vh] min-h-105 w-full flex items-center"
@@ -25,17 +45,22 @@ const LandingPage: React.FC<SectionLandingPageProps> = ({
 
             <div className="relative z-10 w-full">
                 <div className="container mx-auto">
-                    <div className="max-w-3xl text-left">
-                        <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
+                    <motion.div
+                        variants={container}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        className="max-w-3xl text-left">
+                        <motion.h1 variants={item} className="text-white text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
                             {title}
-                        </h1>
+                        </motion.h1>
 
                         {description && (
-                            <p className="mt-4 text-white/90 text-base md:text-lg leading-relaxed">
+                            <motion.p variants={item} className="mt-4 text-white/90 text-base md:text-lg leading-relaxed">
                                 {description}
-                            </p>
+                            </motion.p>
                         )}
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

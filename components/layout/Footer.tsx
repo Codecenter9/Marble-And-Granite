@@ -105,7 +105,7 @@ const Footer = () => {
 
 
                     <div >
-                        <h3 className="text-xl font-bold text-white mb-6 pb-2 border-b-2 border-amber-600 inline-block">Quick Links</h3>
+                        <h3 className="text-xl font-bold text-white mb-6 pb-2 border-b-2 border-amber-600 inline-block">Services</h3>
                         <div className="flex flex-col gap-2">
                             <span className="px-3 py-1 bg-gray-800 hover:bg-gray-700 cursor-pointer text-gray-300 rounded-sm text-sm">Marble Installation</span>
                             <span className="px-3 py-1 bg-gray-800 hover:bg-gray-700 cursor-pointer text-gray-300 rounded-sm text-sm">Granite Supply</span>

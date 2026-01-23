@@ -8,6 +8,10 @@ type CounterItem = {
     suffix?: string;
 };
 
+type CountersProps = {
+    className?: string;
+};
+
 const counters: CounterItem[] = [
     { label: "Years of Experience", value: 15, suffix: "+" },
     { label: "Happy Clients", value: 280, suffix: "+" },
@@ -48,10 +52,10 @@ const CounterCard = ({ label, value, suffix }: CounterItem) => {
     );
 };
 
-const Counters = () => {
+const Counters = ({ className = "" }: CountersProps) => {
     return (
         <section className="w-full">
-            <div className="flex flex-row justify-center gap-6 ">
+            <div className={`flex justify-center gap-6 ${className}`}>
                 {counters.map((item, index) => (
                     <CounterCard key={index} {...item} />
                 ))}

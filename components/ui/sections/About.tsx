@@ -62,7 +62,7 @@ const About = () => {
                     </div>
 
                     <motion.div variants={item}>
-                        <Counters />
+                        <Counters className="flex-row" />
                     </motion.div>
 
                 </motion.div>

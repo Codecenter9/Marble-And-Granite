@@ -3,26 +3,22 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import {
-    ArrowLeft,
-    CheckCircle,
     Ruler,
     Shield,
     Truck,
     Clock,
     Package,
-    MessageCircle,
-    Phone
 } from 'lucide-react'
 import Link from 'next/link'
 import { productsData } from '@/data/products'
 import { use } from 'react'
 import CTA from '@/components/ui/sections/CTA'
+import { motion, Variants } from 'framer-motion'
 
 type ProductDetailPageProps = {
     params: Promise<{ productdetail: string }>
 }
 
-// Flatten all products to find by slug
 const getAllProducts = () => {
     const allProducts: any[] = []
     Object.values(productsData).forEach(category => {
@@ -62,6 +58,25 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
     const category = getCategoryFromProduct(product.slug)
     const relatedProducts = getRelatedProducts(product)
 
+    const container: Variants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.14,
+                delayChildren: 0.25,
+            },
+        },
+    };
+
+    const item: Variants = {
+        hidden: { opacity: 0, y: 40 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+        },
+    };
+
     return (
         <section className="min-h-screen bg-white py-24">
             <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-12">
@@ -84,78 +99,108 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
                         </div>
 
                         <div>
-                            <div className="my-6">
-                                <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                            <motion.div variants={container}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }}
+                                className="my-6">
+                                <motion.h1 variants={item} className="text-4xl font-bold text-gray-900 mb-4">
                                     {product.title}
-                                </h1>
-                                <p className="text-gray-600 text-lg leading-relaxed">
+                                </motion.h1>
+                                <motion.p variants={item} className="text-gray-600 text-lg leading-relaxed">
                                     {product.description}
-                                </p>
-                            </div>
+                                </motion.p>
+                            </motion.div>
 
-                            <div className="grid grid-cols-2 gap-4 mb-8">
-                                <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
+                            <motion.div
+                                variants={container}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }}
+                                className="grid grid-cols-2 gap-4 mb-8">
+                                <motion.div variants={item} className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
                                     <Ruler className="w-5 h-5 text-gray-600" />
                                     <div>
                                         <p className="text-sm text-gray-500">Thickness</p>
                                         <p className="font-medium text-gray-900">18-30 mm</p>
                                     </div>
-                                </div>
-                                <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
+                                </motion.div>
+                                <motion.div variants={item} className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
                                     <Shield className="w-5 h-5 text-gray-600" />
                                     <div>
                                         <p className="text-sm text-gray-500">Warranty</p>
                                         <p className="font-medium text-gray-900">10 Years</p>
                                     </div>
-                                </div>
-                                <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
+                                </motion.div>
+                                <motion.div variants={item} className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
                                     <Truck className="w-5 h-5 text-gray-600" />
                                     <div>
                                         <p className="text-sm text-gray-500">Delivery</p>
                                         <p className="font-medium text-gray-900">5-7 Days</p>
                                     </div>
-                                </div>
-                                <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
+                                </motion.div>
+                                <motion.div variants={item} className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
                                     <Clock className="w-5 h-5 text-gray-600" />
                                     <div>
                                         <p className="text-sm text-gray-500">Installation</p>
                                         <p className="font-medium text-gray-900">2-3 Days</p>
                                     </div>
-                                </div>
-                            </div>
+                                </motion.div>
+                            </motion.div>
 
-                            <div className="mb-8">
-                                <h3 className="text-xl font-bold text-gray-900 mb-4">Key Features</h3>
+                            <motion.div
+                                variants={container}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }}
+                                className="mb-8">
+                                <motion.h3 variants={item} className="text-xl font-bold text-gray-900 mb-4">Key Features</motion.h3>
                                 <div className="space-y-3">
                                     {product.features.map((feature: string, index: number) => (
-                                        <div key={index} className="flex items-center gap-3">
-                                            <CheckCircle className="w-5 h-5 text-green-600" />
+                                        <motion.div variants={item} key={index} className="flex items-center gap-3">
+                                            <span className="mt-1 h-4 w-4 flex items-center justify-center rounded border border-gray-400">
+                                                <span className="h-2 w-2 bg-gray-500 rounded-sm"></span>
+                                            </span>
                                             <span className="text-gray-700">{feature}</span>
-                                        </div>
+                                        </motion.div>
                                     ))}
                                 </div>
-                            </div>
+                            </motion.div>
 
-                            <div className="mb-8">
-                                <h3 className="text-xl font-bold text-gray-900 mb-4">Best Applications</h3>
+                            <motion.div
+                                variants={container}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }}
+                                className="">
+                                <motion.h3 variants={item} className="text-xl font-bold text-gray-900 mb-4">Best Applications</motion.h3>
                                 <div className="flex flex-wrap gap-2">
                                     {product.applications.map((application: string, index: number) => (
-                                        <span
+                                        <motion.span
+                                            variants={item}
                                             key={index}
                                             className="px-4 py-2 bg-amber-50 text-amber-700 rounded-full text-sm font-medium"
                                         >
                                             {application}
-                                        </span>
+                                        </motion.span>
                                     ))}
                                 </div>
-                            </div>
+                            </motion.div>
 
                         </div>
 
-                        <div className="mt-16 pt-12 border-t border-gray-200">
-                            <h2 className="text-2xl font-bold text-gray-900 mb-6">Detailed Specifications</h2>
-                            <div className="grid md:grid-cols-3 gap-8">
-                                <div className="space-y-4 col-span-2 border border-gray-300 px-6 py-3 rounded-md">
+                        <motion.div
+                            variants={container}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }} className=" pt-12 border-t border-gray-200">
+                            <motion.h2 variants={item} className="text-2xl font-bold text-gray-900 mb-6">Detailed Specifications</motion.h2>
+                            <motion.div
+                                variants={container}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }} className="grid md:grid-cols-3 gap-8">
+                                <motion.div variants={item} className="space-y-4 col-span-2 border border-gray-300 px-6 py-3 rounded-md">
                                     <h3 className="text-lg font-semibold text-gray-900">Physical Properties</h3>
                                     <ul className="space-y-3">
                                         <li className="flex justify-between py-2 border-b border-gray-300">
@@ -175,8 +220,8 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
                                             <span className="font-medium">3 - 4</span>
                                         </li>
                                     </ul>
-                                </div>
-                                <div className="space-y-4 col-span-1">
+                                </motion.div>
+                                <motion.div variants={item} className="space-y-4 col-span-1">
                                     <h3 className="text-lg font-semibold text-gray-900">Maintenance Guide</h3>
                                     <ul className="space-y-3">
                                         <li className="flex items-start gap-3">
@@ -201,14 +246,18 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
                                             </div>
                                         </li>
                                     </ul>
-                                </div>
-                            </div>
-                        </div>
+                                </motion.div>
+                            </motion.div>
+                        </motion.div>
                     </div>
                     <div className="flex flex-1">
                         {relatedProducts.length > 0 && (
-                            <div className="">
-                                <h2 className="text-2xl font-bold text-gray-900 mb-4">Related {category} Products</h2>
+                            <motion.div
+                                variants={container}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }} className="">
+                                <motion.h2 variants={item} className="text-2xl font-bold text-gray-900 mb-4">Related {category} Products</motion.h2>
                                 <div className="flex flex-col gap-3">
                                     {relatedProducts.map((related: any) => (
                                         <Link
@@ -216,7 +265,9 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
                                             href={`/products/${related.slug}`}
                                             className="group"
                                         >
-                                            <div className="bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-300">
+                                            <motion.div
+                                                variants={item}
+                                                className="bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-300">
                                                 <div className="flex flex-row gap-3">
                                                     <div className="flex relative h-24 w-full flex-1 overflow-hidden">
                                                         <Image
@@ -237,11 +288,11 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
                                                         </span>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </motion.div>
                                         </Link>
                                     ))}
                                 </div>
-                            </div>
+                            </motion.div>
                         )}
                     </div>
                 </div>
