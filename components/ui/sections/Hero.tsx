@@ -56,11 +56,11 @@ export default function Hero() {
                             Dorra Ekka Marble & Granite
                         </TextAnimate>
 
-                        <TextAnimate animation="blurInUp" by="character" once className="font-playfair text-4xl lg:text-5xl font-bold leading-tight tracking-[0.15rem]"
+                        <TextAnimate animation="blurInUp" by="character" once className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-[0.15rem]"
                         >
                             A PERFECT BLEND OF
                         </TextAnimate>
-                        <TextAnimate animation="blurInUp" by="character" once className="font-playfair text-4xl lg:text-5xl font-bold leading-tight tracking-[0.15rem]"
+                        <TextAnimate animation="blurInUp" by="character" once className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-[0.15rem]"
                         >
                             STRENGTH & BEAUTY
                         </TextAnimate>
