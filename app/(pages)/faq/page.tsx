@@ -93,7 +93,7 @@ const FAQ = () => {
           whileInView="visible"
           viewport={{ once: true }} className="space-y-4">
           {faqs.map((faq, index) => (
-            <motion.div variants={item} key={index} className="bg-gray-300 rounded-md">
+            <motion.div variants={item} key={index} className="bg-gray-300 cursor-pointer rounded-md">
               <Accordion variant="splitted">
                 <AccordionItem className='text-start' key="1" aria-label={faq.question} title={faq.question}>
                   {faq.answer}

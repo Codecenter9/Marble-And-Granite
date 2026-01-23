@@ -50,14 +50,19 @@ export default function Hero() {
                     className="max-w-xl space-y-5 text-white"
                 >
                     <motion.div variants={item} className="flex flex-col gap-3">
-                        <TextAnimate animation="blurInUp" by="character" once className="text-base text-pink-500 font-semibold"
+                        <TextAnimate animation="blurInUp" by="character" once className="tracking-[0.35em] uppercase text-sm text-pink-500 font-semibold opacity-90"
+
                         >
                             Dorra Ekka Marble & Granite
                         </TextAnimate>
 
-                        <TextAnimate animation="blurInUp" by="character" once className="font-playfair text-4xl lg:text-5xl font-bold italic leading-tight tracking-tight"
+                        <TextAnimate animation="blurInUp" by="character" once className="font-playfair text-4xl lg:text-5xl font-bold leading-tight tracking-[0.15rem]"
                         >
-                            A PERFECT BLEND OF STRENGTH & BEAUTY
+                            A PERFECT BLEND OF
+                        </TextAnimate>
+                        <TextAnimate animation="blurInUp" by="character" once className="font-playfair text-4xl lg:text-5xl font-bold leading-tight tracking-[0.15rem]"
+                        >
+                            STRENGTH & BEAUTY
                         </TextAnimate>
 
                     </motion.div>
@@ -66,7 +71,7 @@ export default function Hero() {
                         <TextAnimate animation="blurInUp" by="character" once
                         >
                             Timeless elegance crafted from the finest marble and granite,
-                            designed to elevate modern and classic spaces with natural beauty.
+                            designed to elevate modern and classic spaces with natural beauty
                         </TextAnimate>
 
                     </motion.p>
